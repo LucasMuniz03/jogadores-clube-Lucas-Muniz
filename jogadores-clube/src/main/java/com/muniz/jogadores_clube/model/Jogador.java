@@ -1,5 +1,6 @@
 package com.muniz.jogadores_clube.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,7 @@ public class Jogador {
     private String posicao;
 
     @ManyToOne
+    @JsonBackReference  // ← Correto aqui
     @JoinColumn(name = "clube_id")
     private Clube clube;
 

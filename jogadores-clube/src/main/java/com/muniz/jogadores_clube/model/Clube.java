@@ -1,5 +1,6 @@
 package com.muniz.jogadores_clube.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Clube {
     private String nome;
 
     @OneToMany(mappedBy = "clube", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Jogador> jogadores;
 
     // Getters e Setters
